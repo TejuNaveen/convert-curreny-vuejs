@@ -9,82 +9,39 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 </head>
 <body>
-    <!-- <div id="app">
-        {{message}}
-    </div>
-    <div id="app1">
-        <span v-bind:title="message">hover me!</span>
-    </div>
-    <div id='app2'>
-        <span v-if="seen">am there</span>
-    </div>
-    <div id="app3">
-        <ol>
-            <li v-for="todo in todos">
-                {{todo.text}}
-            </li>
-        </ol>
-    </div>
-    <div id="app4">
-        <p>{{message}}</p>
-        <button v-on:click="btnClickFn">click</button>
-    </div>
-    <div id="app5">
-        <p>{{message}}</p>
-        <input v-model="message">
-    </div>
-    <div id="app6">
-        <ol>
-            <todo-list 
-                v-for="item in items"
-                v-bind:todo ='item'
-                v-bind:key ='item.id'
-            ></todo-list>
-        </ol>
-    </div>
-    <div id="app7">
-        <ol>
-            <todo-item></todo-item>
-            <todo-item></todo-item>
-            <todo-item></todo-item>
-        </ol>
-    </div>
-
-    <div id="app8">
-        <p>{{count}}</p>
-        <button @click="reduceCount">-</button>
-        <button @click="increaseCount">+</button>
-        <p v-if="isEvenNumber">count is even</p>
-        <p v-else>count is odd</p>
-    </div> -->
     <div id="app">
         <div class="container my-5">
-            <div class="row">
-                <div class="col-sm-6">
-                    <label for="">from</label>
-                    <select v-model="from" name="" id="" class="form-control">
-                        <option :value="currency.id" class="" v-for="currency in formattedCurrencies">{{currency.currencyName}}</option>
-                    </select>
-                </div>
-                <div class="col-sm-6">
-                    <label for="">to</label>
-                    <select v-model="to" name="" id="" class="form-control">
-                        <option :value="currency.id" class="" v-for="currency in formattedCurrencies">{{currency.currencyName}}</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 col-sm-offset-3 my-1">
-                    <input v-model="amount" type="text" class="form-control" placeholder="amount">
-                    <div class="text-center my-1">
-                        <button :disabled="disabled" @click="convertCurrencies()" class="btn btn-primary">{{loading ? 'converting...' : 'convert'}}</button>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 col-sm-offset-3 text-center">
-                    <h3 class="resutlContnet">{{calculateResult}}</h3>
-                </div>
+            <div class="conver-container">
+                    <div class="row">
+                            <div class="text-center">
+                                <h2>currency converter</h2>
+                            </div>
+                            <div class="col-sm-12 mb-10">
+                                <label for="">from</label>
+                                <select v-model="from" name="" id="" class="form-control">
+                                    <option :value="currency.id" class="" v-for="currency in formattedCurrencies">{{currency.currencyName}}</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-12 mb-10">
+                                <label for="">to</label>
+                                <select v-model="to" name="" id="" class="form-control">
+                                    <option :value="currency.id" class="" v-for="currency in formattedCurrencies">{{currency.currencyName}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 mb-10 my-1">
+                                <input v-model="amount" type="text" class="form-control" placeholder="amount">
+                                <div class="text-center my-1">
+                                    <button :disabled="disabled" @click="convertCurrencies()" class="btn btn-primary">{{loading ? 'converting...' : 'convert'}}</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 mb-10 text-center">
+                                <h3 class="resutlContnet">{{calculateResult}}</h3>
+                            </div>
+                        </div>
             </div>
         </div>
     </div>
